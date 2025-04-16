@@ -1,0 +1,28 @@
+{
+  "name": "akyn_projekt",
+  "version": "1.0.0",
+  "main": "api.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BertrandTang/akyn_projekt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BertrandTang/akyn_projekt/issues"
+  },
+  "homepage": "https://github.com/BertrandTang/akyn_projekt#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "node": "^23.11.0",
+    "node-fetch": "^3.3.2"
+  }
+}
