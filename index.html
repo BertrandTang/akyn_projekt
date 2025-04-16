@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Interface</title>
+</head>
+<body>
+    <h1>ChatGPT Interface</h1>
+    <label for="userInput">Entrez votre message :</label>
+    <input type="text" id="userInput" placeholder="Tapez votre message ici">
+    <button id="sendButton">Envoyer</button>
+
+    <div id="response">
+        <h2>Réponse :</h2>
+        <p id="responseText">Aucune réponse pour le moment.</p>
+    </div>
+
+    <script>
+        document.getElementById('sendButton').addEventListener('click', async () => {
+            const userInput = document.getElementById('userInput').value;
+            const responseText = document.getElementById('responseText');
+
+            // Simulation d'appel à une API
+            responseText.textContent = "Chargement...";
+
+            try {
+                // Remplacez cette partie par l'appel réel à l'API ChatGPT
+                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer VOTRE_CLE_API'
+                    },
+                    body: JSON.stringify({
+                        model: "gpt-4",
+                        messages: [{ role: "user", content: userInput }]
+                    })
+                });
+
+                const data = await response.json();
+                responseText.textContent = data.choices[0].message.content;
+            } catch (error) {
+                responseText.textContent = "Erreur lors de la récupération de la réponse.";
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>
