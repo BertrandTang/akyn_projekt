@@ -10,6 +10,7 @@ document.getElementById('sendButton').addEventListener('click', async () => {
 	userMessageDiv.className = 'message human';
 	userMessageDiv.textContent = userInput;
 	messageZone.appendChild(userMessageDiv);
+	messageZone.scrollTop = messageZone.scrollHeight;
 
 	try {
 		document.getElementById('userInput').value = '';
@@ -31,6 +32,7 @@ document.getElementById('sendButton').addEventListener('click', async () => {
 		assistantMessageDiv.className = 'message gpt';
 		assistantMessageDiv.textContent = assistantMessage;
 		messageZone.appendChild(assistantMessageDiv);
+		messageZone.scrollTop = messageZone.scrollHeight;
 	} catch (error) {
 		console.error(error);
 	}
